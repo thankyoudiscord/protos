@@ -1,0 +1,17 @@
+syntax = "proto3";
+package tyd;
+option go_package = "protos";
+
+service BannerService {
+  // generates the banner image with all signatures from the database
+  rpc GenerateBanner(CreateBannerRequest) returns (CreateBannerResponse);
+}
+
+message CreateBannerRequest {}
+
+message CreateBannerResponse {
+  // timestamp the banner was generated at
+  string generated_at = 1;
+  // the generated banner image
+  bytes image = 2;
+}
