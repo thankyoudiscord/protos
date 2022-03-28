@@ -1,8 +1,8 @@
 syntax = "proto3";
 package tyd;
-option go_package = "protos";
+option go_package = "pkg/protos";
 
-service BannerService {
+service Banner {
   // generates the banner image with all signatures from the database
   rpc GenerateBanner(CreateBannerRequest) returns (CreateBannerResponse);
 }
